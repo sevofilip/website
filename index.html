@@ -3,54 +3,101 @@
 <head>
   <title>filip ševo</title>
 
-   <link rel="icon" type="image/png" href="logo.jpeg">
+  <link rel="icon" type="image/png" href="logo.jpeg">
 
   <style>
-    body {
-      font-family: Helvetica, Arial, sans-serif;
+    html, body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      height: 100%;
+      background: #fff;
+      color: #111;
+      font-family: Helvetica, Arial, sans-serif;
+
+      /* prevents all scrolling */
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      /* optical centering tweak */
+      transform: translateY(-2vh);
+
       text-align: center;
-      color: #111;
-      background: #fff;
+
+      /* fade-in */
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     .container {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
     p {
+      margin: 0;
       font-size: 14px;
       letter-spacing: 1px;
-      margin: 0;
+      font-weight: 300;
+      color: #111;
     }
 
-    p:first-child {
-      letter-spacing: 1.5px;
+    .name {
+      font-size: 14px;
+      letter-spacing: 1.6px;
+    }
+
+    .label {
+      opacity: 0.75;
     }
 
     a {
       color: #111;
       text-decoration: none;
       letter-spacing: 1px;
+      position: relative;
+      transition: opacity 0.25s ease;
     }
 
     a:hover {
-      text-decoration: none;
-      color: #111;
+      opacity: 0.5;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: #111;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    a:hover::after {
+      transform: scaleX(1);
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <p>filip ševo</p>
-    <p>creative consulting</p>
+    <p class="name">filip ševo</p>
+    <p class="label">creative consulting</p>
     <p>
       <a href="mailto:office@filipsevo.com">office@filipsevo.com</a>
     </p>
