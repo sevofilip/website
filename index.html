@@ -9,7 +9,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100svh;
       background: #fff;
       color: #111;
       font-family: Helvetica, Arial, sans-serif;
@@ -22,12 +22,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-      transform: translateY(-2vh);
-
       text-align: center;
 
-      /* faster fade-in */
       opacity: 0;
       animation: fadeIn 0.6s ease-out forwards;
     }
@@ -49,7 +45,7 @@
       font-size: 14px;
       letter-spacing: 1px;
       font-weight: 400;
-      color: #111; /* ensure consistent color */
+      color: #111;
     }
 
     .name {
@@ -57,13 +53,14 @@
     }
 
     .label {
-      opacity: 0.7; /* subtle difference but not washed out */
+      opacity: 1;
+      letter-spacing: 1px;
       font-weight: 400;
     }
 
     a {
       color: #111;
-      text-decoration: none; /* removed underline */
+      text-decoration: none;
       letter-spacing: 1px;
       transition: opacity 0.2s ease;
     }
